@@ -1,0 +1,12 @@
+#cloud-config
+users:
+  - default
+  - name: yc-user
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLWrZfnm+23IDSzzeNn3WTk1zS2xFq+8/PmIDB11QP6CMhIp2F2kzvXlkhT37Z4KH8qdGJjXs01RzWCvHbJTfa0eTHFTD+XTri5QzkE36un5razzL4f3S2tJNQ4og6cKuS+/uN6dTcLKVqRh63TDcyydYofPcCeEXT6GtRtTjrTFRLOL5PzYKDpTyb3jF52LLz7ssXv+NrPNwT942+AMNMScMvRgFQaSuBL536TnOMJoQDhMitQrRpw48KhmVfJwPhx+AL9NYotnOxFoFVRfXpLmP1i/1L0q8XXFWC1ArqGst4sPPu2eKLaLWy6nd6zlf5RrxfFppAvygtYAbSiyf3 root@kot"
+runcmd:
+  - [ wget, "https://raw.githubusercontent.com/Otus-DevOps-2021-02/KirillKotovsky_infra/cloud-testapp/startup.sh", -O, "/home/yc-user/startup.sh" ]
+  - [ sudo, bash, "/home/yc-user/startup.sh" ]
