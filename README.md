@@ -1,12 +1,12 @@
 # KirillKotovsky_infra
 KirillKotovsky Infra repository
-testapp_IP = 130.193.49.14
+testapp_IP = 130.193.50.168
 testapp_port = 9292
 bastion_IP = 178.154.210.3
 someinternalhost_IP = 10.128.0.28
 
 Дополнительное задание:
-Запуск инстанса с использованием метадаты для развертывания приложеньки при первом запуске
+Запуск инстанса с использованием metadata для развертывания приложеньки при первом запуске<br>
 yc compute instance create \
   --name reddit-app \
   --hostname reddit-app \
