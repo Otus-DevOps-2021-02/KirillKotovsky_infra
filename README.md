@@ -1,6 +1,6 @@
 # KirillKotovsky_infra
 KirillKotovsky Infra repository
-testapp_IP = 130.193.50.168
+testapp_IP = 178.154.204.151
 testapp_port = 9292
 bastion_IP = 178.154.210.3
 someinternalhost_IP = 10.128.0.28
