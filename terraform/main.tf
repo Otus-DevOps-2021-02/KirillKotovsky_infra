@@ -5,17 +5,19 @@ provider "yandex" {
   zone                     = var.zone
 }
 resource "yandex_compute_instance" "app" {
-  name        = "reddit-app"
+  count = var.count_of_instance
+  name        = "reddit-app-${count.index}"
   platform_id = "standard-v1"
   metadata = {
     ssh-keys = "ubuntu:${file(var.public_key_path)}"
-  }
+      }
   connection {
     type  = "ssh"
-    host  = yandex_compute_instance.app.network_interface.0.nat_ip_address
+    #host  = yandex_compute_instance.app[count.index].network_interface.0.nat_ip_address
+    host  =          self.network_interface.0.nat_ip_address
+
     user  = "ubuntu"
     agent = false
-    # путь до приватного ключа
     private_key = file(var.private_key)
   }
   provisioner "file" {
@@ -28,7 +30,9 @@ resource "yandex_compute_instance" "app" {
 
   resources {
     cores  = 2
+    core_fraction = 5
     memory = 2
+
   }
 
   boot_disk {

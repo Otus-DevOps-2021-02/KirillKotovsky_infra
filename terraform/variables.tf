@@ -23,3 +23,6 @@ variable service_account_key_file {
 variable private_key {
   description = "private_key"
 }
+ variable "count_of_instance" {
+   default = 1
+ }
