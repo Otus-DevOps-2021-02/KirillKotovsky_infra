@@ -23,6 +23,7 @@ variable service_account_key_file {
 variable private_key {
   description = "private_key"
 }
+
 variable app_disk_image {
   description = "Disk image for reddit app"
   default     = "fd89rsslvtedsav6q6bj"
@@ -31,3 +32,7 @@ variable db_disk_image {
   description = "Disk image for reddit db"
   default     = "fd8bueccrtn2vpsmbt2e"
 }
+
+ variable "count_of_instance" {
+   default = 1
+ }
