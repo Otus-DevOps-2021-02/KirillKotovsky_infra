@@ -7,3 +7,4 @@
 versions.tf
 /terraform/modules/app/versions.tf
 /terraform/modules/db/versions.tf
+*.retry
