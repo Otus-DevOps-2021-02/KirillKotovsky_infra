@@ -9,3 +9,4 @@ versions.tf
 /terraform/modules/db/versions.tf
 *.retry
 jdauphant.nginx
+/jdauphant.nginx/
