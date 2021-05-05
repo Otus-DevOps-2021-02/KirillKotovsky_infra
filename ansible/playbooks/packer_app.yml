@@ -1,12 +1,12 @@
 ---
 - name: Install Ruby && Bundler
-  hosts: all
+  hosts: app
   become: true
+  tags: test-deploy
   tasks:
   # Установим в цикле все зависимости
   - name: Install ruby and rubygems and required packages
-    apt: "name={{ item }} state=present"
-    with_items:
-      - ruby-full
-      - ruby-bundler
-      - build-essential
+    apt:
+      name: ['ruby-full', 'ruby-bundler', 'build-essential', 'git']
+      state: present
+      update_cache: yes
